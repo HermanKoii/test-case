@@ -31,19 +31,23 @@ Integration tests cover critical paths, including:
 - Authentication and authorization mechanisms
 - Complex transaction processing
 
+### Running Integration Tests
+```bash
+# Execute MCP integration test suite
+npm run test:integration
+```
+
 ### Best Practices
 - Use mock services for external dependencies
 - Implement robust error tracking
 - Maintain detailed test logs
 - Regularly update test scenarios
-- Maintain test isolation
-- Use realistic test data
+- Always run full test suite before code commits
+- Monitor test coverage metrics
 
-### Running Integration Tests
-To run MCP integration tests, use the following command:
-```bash
-npm run test:integration
-```
+### Troubleshooting
+- Refer to test logs for detailed error diagnostics
+- Contact the QA team for complex integration issues
 
 ### Reporting
 Integration test results are automatically logged and can be reviewed in the system's test management dashboard.
@@ -54,8 +58,9 @@ Some integration tests may require:
 - Controlled resource access
 - Advanced configuration
 
-### Contribution
-Contributions to our testing framework are welcome. Please review our contribution guidelines before submitting pull requests.
+## Additional Resources
+- [Integration Testing Guide](docs/integration-testing.md)
+- [MCP Architecture Overview](docs/mcp-architecture.md)
 
-## Additional Notes
-Continuous improvement of MCP integration testing is an ongoing process. Feedback and contributions are always appreciated.
+## Contribution
+Continuous improvement of MCP integration testing is an ongoing process. Feedback and contributions are always appreciated. Please review our contribution guidelines before submitting pull requests.
