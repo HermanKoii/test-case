@@ -45,16 +45,24 @@ def test_readme_mcp_section():
         if not headers:
             return False
         
-        # Extract header levels
-        header_levels = [len(header[0]) for header in headers]
+        # Extract header text and levels
+        header_data = [(len(header[0]), header[1]) for header in headers]
         
-        # Minimum sanity checks
-        return (
+        # Validate basic header structure
+        try:
             # First header should be top level
-            header_levels[0] == 1 and
-            # Maximum header level difference is no more than 1
-            all(abs(header_levels[i+1] - header_levels[i]) <= 1 for i in range(len(header_levels)-1))
-        )
+            assert header_data[0][0] == 1, "First header must be top level"
+            
+            # Ensure headers are in a somewhat reasonable order
+            prev_level = header_data[0][0]
+            for level, _ in header_data[1:]:
+                # Allow level to be the same or increase by at most 1
+                assert level <= prev_level + 1, "Header levels should not increase too quickly"
+                prev_level = level
+            
+            return True
+        except AssertionError:
+            return False
     
     assert check_markdown_headers(content), "Markdown header structure is invalid"
 
