@@ -1,0 +1,14 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Project with comprehensive README testing",
+  "scripts": {
+    "test": "jest"
+  },
+  "jest": {
+    "testMatch": ["**/tests/**/*.js"]
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
