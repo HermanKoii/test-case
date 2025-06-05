@@ -48,19 +48,13 @@ def test_readme_mcp_section():
         # Extract header levels
         header_levels = [len(header[0]) for header in headers]
         
-        # Basic sanity checks
-        # 1. First header should be top level (1 #)
-        if header_levels[0] != 1:
-            return False
-        
-        # 2. Ensure relative header progression
-        for i in range(len(header_levels) - 1):
-            # Allow headers to stay the same level or go down
-            # But limit progression to one level up at a time
-            if header_levels[i+1] > header_levels[i] + 1:
-                return False
-        
-        return True
+        # Minimum sanity checks
+        return (
+            # First header should be top level
+            header_levels[0] == 1 and
+            # Maximum header level difference is no more than 1
+            all(abs(header_levels[i+1] - header_levels[i]) <= 1 for i in range(len(header_levels)-1))
+        )
     
     assert check_markdown_headers(content), "Markdown header structure is invalid"
 
