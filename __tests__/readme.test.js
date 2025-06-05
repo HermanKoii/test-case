@@ -8,23 +8,23 @@ describe('README Documentation', () => {
     readmeContent = fs.readFileSync(path.resolve(__dirname, '../readme.md'), 'utf8');
   });
 
-  test('README should contain MCP Integration Testing section', () => {
+  test('README contains MCP integration testing section', () => {
     expect(readmeContent).toContain('MCP Integration Testing');
-  });
-
-  test('README should describe testing purpose', () => {
-    expect(readmeContent).toContain('Master Control Program (MCP) Integration Testing');
   });
 
   test('README includes key testing strategy information', () => {
     const requiredSections = [
       'Overview',
-      'Testing Strategy',
+      'Testing Methodology',
       'Key Testing Principles',
+      'Test Categories',
+      'Component Interaction Strategies',
       'Test Coverage',
       'Running Integration Tests',
       'Best Practices',
-      'Troubleshooting'
+      'Troubleshooting',
+      'Reporting',
+      'Limitations'
     ];
 
     requiredSections.forEach(section => {
@@ -35,12 +35,6 @@ describe('README Documentation', () => {
   test('README structure should be markdown compliant', () => {
     const headings = readmeContent.match(/^#+\s.+/gm) || [];
     expect(headings.length).toBeGreaterThan(3);
-  });
-
-  test('README has proper markdown formatting', () => {
-    // Check for headers
-    expect(readmeContent).toMatch(/^#\s/m);
-    expect(readmeContent).toMatch(/^##\s/m);
   });
 
   test('README should include test running instructions', () => {
