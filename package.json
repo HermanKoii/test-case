@@ -1,12 +1,16 @@
 {
-  "name": "project",
+  "name": "readme-testing-project",
   "version": "1.0.0",
-  "description": "Project with comprehensive README testing",
+  "description": "Project with comprehensive README testing and documentation",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "jest": {
-    "testMatch": ["**/tests/**/*.js"]
+    "testMatch": [
+      "**/__tests__/**/*.js",
+      "**/tests/**/*.js"
+    ]
   },
   "devDependencies": {
     "jest": "^29.7.0"
