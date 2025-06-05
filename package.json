@@ -1,16 +1,17 @@
 {
-  "name": "integration-testing-framework",
+  "name": "mcp-integration-testing-framework",
   "version": "1.0.0",
-  "description": "Comprehensive integration testing framework",
+  "description": "Comprehensive MCP integration testing framework",
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "test:py": "pytest tests/"
+    "test:py": "pytest tests/",
+    "test:integration": "jest __tests__"
   },
-  "keywords": ["testing", "integration", "framework"],
+  "keywords": ["testing", "integration", "MCP", "framework"],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^29.5.0"
+    "jest": "^29.7.0"
   }
 }
