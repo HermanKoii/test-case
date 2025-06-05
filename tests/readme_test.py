@@ -36,25 +36,16 @@ def test_readme_mcp_section():
     # Validate content length and structure
     assert len(content) > 500, "README content seems too short"
     
-    # Simplified header validation
-    def validate_markdown_headers(content):
-        """Check if headers follow a basic markdown structure."""
-        # Find all headers
-        headers = re.findall(r'^(#+)\s+(.+)$', content, re.MULTILINE)
-        
-        # Must have at least one header
-        if not headers:
-            return False
-        
-        # Ensure first header is top-level
-        if len(headers[0][0]) != 1:
-            return False
-        
-        # Quick check: headers have a reasonable progression
-        levels = [len(h[0]) for h in headers]
-        return all(0 < levels[i] <= levels[i-1] + 1 for i in range(1, len(levels)))
+    # Print out headers for debugging
+    headers = re.findall(r'^(#+)\s+(.+)$', content, re.MULTILINE)
+    print("Headers found:")
+    for header in headers:
+        print(f"Level: {len(header[0])}, Text: {header[1]}")
     
-    assert validate_markdown_headers(content), "Markdown header structure is invalid"
+    # Quick header sanity check
+    header_levels = [len(header[0]) for header in headers]
+    assert header_levels[0] == 1, "First header must be top level"
+    assert all(0 < header_levels[i] <= header_levels[i-1] + 1 for i in range(1, len(header_levels))), "Header levels should progress reasonably"
 
 def test_readme_readability():
     """Check README for basic readability and structure."""
