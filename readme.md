@@ -1,5 +1,9 @@
 # Project Overview
 
+## Testing Overview
+
+Our project takes a comprehensive approach to software testing, ensuring high-quality, reliable code through multiple testing methodologies. This document outlines our testing strategy, goals, and best practices.
+
 ## Testing Strategy
 
 ### Test Coverage and Approach
