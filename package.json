@@ -8,7 +8,12 @@
     "test:py": "pytest tests/",
     "test:integration": "jest __tests__"
   },
-  "keywords": ["testing", "integration", "MCP", "framework"],
+  "keywords": [
+    "testing",
+    "integration",
+    "MCP",
+    "framework"
+  ],
   "author": "",
   "license": "MIT",
   "devDependencies": {
