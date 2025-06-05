@@ -21,7 +21,11 @@ def test_readme_mcp_section():
         "### Testing Methodology",
         "### Key Testing Principles",
         "### Test Categories",
+        "### Component Interaction Strategies",
+        "### Test Coverage",
+        "### Running Integration Tests",
         "### Best Practices",
+        "### Troubleshooting",
         "### Reporting",
         "### Limitations"
     ]
@@ -32,11 +36,18 @@ def test_readme_mcp_section():
     # Validate content length and structure
     assert len(content) > 500, "README content seems too short"
     
-    # Check for markdown formatting
+    # Check for markdown formatting with more lenient rules
     def check_markdown_headers(content):
         headers = re.findall(r'^(#+)\s+(.+)$', content, re.MULTILINE)
+        if not headers:
+            return False
+        
+        # Ensure no major header level jumps (e.g., # to ### without ##)
         header_levels = [len(header[0]) for header in headers]
-        return all(header_levels[i] <= header_levels[i+1] for i in range(len(header_levels)-1))
+        for i in range(len(header_levels) - 1):
+            if header_levels[i+1] - header_levels[i] > 1:
+                return False
+        return True
     
     assert check_markdown_headers(content), "Markdown header structure is invalid"
 
