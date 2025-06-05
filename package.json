@@ -5,6 +5,9 @@
   "scripts": {
     "test": "jest"
   },
+  "jest": {
+    "testMatch": ["**/tests/**/*.js"]
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   }
