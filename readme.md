@@ -16,13 +16,14 @@ This document provides comprehensive instructions for setting up, connecting to,
 - **npm:** v8.0.0 or higher
 - **Git:** v2.30.0 or higher
 
-### 3. Network Requirements
-- Open internet connection
-- Firewall configured to allow outbound connections
-- Available network port (default: 3000)
+## Server Setup
 
-## Server Installation
+### System Preparation
+1. Ensure all prerequisites are met
+2. Verify network and system configuration
+3. Prepare development or production environment
 
+### Installation Steps
 1. Clone the repository:
 ```bash
 git clone https://github.com/your-organization/your-project.git
@@ -34,8 +35,7 @@ cd your-project
 npm install
 ```
 
-## Configuration
-
+### Environment Configuration
 Create a `.env` file in the project root with the following configuration:
 ```
 SERVER_PORT=3000
@@ -44,16 +44,15 @@ API_SECRET=your_secret_key
 LOG_LEVEL=info
 ```
 
-## Running the Server
-
-### Development Mode
+### Server Initialization
+#### Development Mode
 ```bash
 npm run start:dev
 # or
 npm run dev
 ```
 
-### Production Mode
+#### Production Mode
 ```bash
 npm run start:prod
 # or
@@ -123,7 +122,7 @@ connectToServer();
 - Use strong, unique passwords
 - Regularly update dependencies
 
-## Support and Contact
+## Support
 - **Email:** support@yourproject.com
 - **Issue Tracker:** https://github.com/your-organization/your-project/issues
 - **Documentation:** Refer to project wiki and README
