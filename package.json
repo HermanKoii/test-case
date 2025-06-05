@@ -1,0 +1,12 @@
+{
+  "name": "mcp-integration-testing",
+  "version": "1.0.0",
+  "description": "Project with MCP Integration Testing Documentation",
+  "scripts": {
+    "test": "jest",
+    "test:readme": "jest __tests__/readme.test.js"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
