@@ -1,0 +1,1 @@
+{\n  "devDependencies": {\n    "jest": "^29.7.0",\n    "vitest": "^3.2.1"\n  },\n  "jest": {\n    "transform": {\n      "^.+\\.js$": "babel-jest"\n    },\n    "transformIgnorePatterns": [\n      "node_modules/(?!vitest)/"\n    ],\n    "testEnvironment": "node"\n  },\n  "type": "module"\n}
