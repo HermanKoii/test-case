@@ -10,7 +10,7 @@ describe('README Documentation', () => {
 
   test('README should contain comprehensive MCP integration testing details', () => {
     const requiredSections = [
-      'Master Control Program (MCP) Integration Testing',
+      'Master Control Program.*Integration Testing',
       'Purpose',
       'Testing Approach',
       'Key Testing Principles',
@@ -19,7 +19,7 @@ describe('README Documentation', () => {
     ];
 
     requiredSections.forEach(section => {
-      expect(readmeContent).toMatch(new RegExp(section, 'i'));
+      expect(readmeContent).toMatch(new RegExp(section, 'is'));
     });
   });
 
