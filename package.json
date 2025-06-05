@@ -1,0 +1,11 @@
+{
+  "name": "project-documentation",
+  "version": "1.0.0",
+  "description": "Project with MCP integration testing documentation",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
